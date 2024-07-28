@@ -1,5 +1,10 @@
 # myxrename
-A bash script to take a source folder, recursively find all the M4B files, pull metadata information, create a tree structure on the target folder and hardlinks all files to the target folder
+A bash script that does the following
+- take a source folder
+- recursively find all the M4B files in it, and for each file
+  - pull and parse metadata information
+  - create a tree structure on the target folder
+  - and hardlinks all files from the parent folder of the M4B file to the target folder
 
 ## Usage:
 ./myxrename.sh -t "Torrent Directory" -m "Media Directory" -o [f|e] -f "Output filename"
