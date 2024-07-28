@@ -1,7 +1,7 @@
 # myxrename
 A bash script to take a source folder, pull metadata information, create a tree structure on the target folder and hardlinks all files
 
-##Usage:
+## Usage:
 ./myxrename.sh -t <Torrent Directory> -m <Media Directory> -o [f|e] -f <Output filename>
 
 -t is ideally your torrent directory,                  /data/torrents/completed/audiobooks
