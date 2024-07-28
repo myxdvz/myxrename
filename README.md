@@ -1,9 +1,9 @@
 # myxrename
 A bash script that does the following
-- take a source folder
+- take a source folder, ideally your torrents download folder where your audiobook files are
 - recursively find all the M4B files in it, and for each file
   - pull and parse metadata information
-  - create a tree structure on the target folder
+  - create a tree structure on the target folder, ideally your media folder (like your abs audiobook library folder)
   - and hardlinks all files from the parent folder of the M4B file to the target folder
 
 ## Usage:
