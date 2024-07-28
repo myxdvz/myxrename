@@ -32,7 +32,7 @@ A bash script that does the following
 *If the SERIES and PART tags are available, it uses those. Otherwise, the Subtitle is assumed as the series.*
 
 **It builds the following heirarchy on the target folder**
-* <mediaDirector>/Author/Title
+* <mediaDirector>/Author/Title (If there is no series information)
 * <mediaDirector>/Author/Series/SeriesPart - Title
 
 ## FAQ
