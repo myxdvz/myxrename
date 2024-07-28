@@ -41,6 +41,7 @@ A bash script to take a source folder, recursively find all the M4B files, pull 
 <p>A: The file is skipped</p>
 
 ## Dependencies
-Requires ffprobe (which comes with ffmpeg) to work
- 	[title] (https://ffmpeg.org/)
+Requires ffprobe (which comes with [ffmpeg](https://ffmpeg.org/)) to work
+Note that hardlinks only work if the source and target directories are in the SAME volume
+
 
