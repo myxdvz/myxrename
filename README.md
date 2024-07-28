@@ -24,12 +24,12 @@ A bash script that does the following
 * tags:SERIES = Series
 * tags:PART = Series part or number
 
+> *If the SERIES and PART tags are available, it uses those. Otherwise, the Subtitle is assumed as the series.*
+
 **It also takes the following for future usage**
 * tags:composer = Narrator
 * tags:isbn = ISBN
 * tags:audible_asin = ASIN
-
-*If the SERIES and PART tags are available, it uses those. Otherwise, the Subtitle is assumed as the series.*
 
 **It builds the following heirarchy on the target folder**
 * <mediaDirector>/Author/Title (If there is no series information)
