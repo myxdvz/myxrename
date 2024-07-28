@@ -1,10 +1,10 @@
 # Set your source and target directories
-# sourceDirectory="/path/to/source"
-# targetDirectory="/path/to/target"
+# torrentDirectory="/path/to/source"
+# mediaDirectory="/path/to/target"
 
 #default values
-torrentDirectory="/Volumes/plex/torrents/complete/audiobooks"
-mediaDirectory="/Volumes/plex/media/audiobooks/audiobookshelf"
+torrentDirectory="/data/torrents/complete/audiobooks"
+mediaDirectory="/data/media/audiobooks/audiobookshelf"
 output="f"
 filename="myxrename"
 declare -i torrentCount=0
