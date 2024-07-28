@@ -3,3 +3,5 @@ A bash script to take a source folder, pull metadata information, create a tree 
 
 # Dependencies
 Requires ffprobe (which comes with ffmpeg) to work
+https://ffmpeg.org/
+
