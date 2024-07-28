@@ -1,10 +1,12 @@
+#! /bin/bash
+
 # Set your source and target directories
 # torrentDirectory="/path/to/source"
 # mediaDirectory="/path/to/target"
 
 #default values
-torrentDirectory="/data/torrents/complete/audiobooks"
-mediaDirectory="/data/media/audiobooks/audiobookshelf"
+torrentDirectory="/Volumes/plex/torrents/complete/audiobooks"
+mediaDirectory="/Volumes/plex/media/audiobooks/audiobookshelf"
 output="f"
 filename="myxrename"
 declare -i torrentCount=0
@@ -67,7 +69,7 @@ find "$torrentDirectory" -type f \( -iname "*.m4b" \) | while read -r file; do
                     #echo "items >>" ${ITEMS[0]} " and " ${ITEMS[1]}
                     if [ "${ITEMS[0]}" = "tag:artist" ] 
                     then
-                        author="${ITEMS[1]//[:]/_}"
+                        author="${ITEMS[1]//[.]/}"
                         echo "author=" "${author}"
                     fi
                     if [ "${ITEMS[0]}" = "tag:title" ] 
@@ -116,6 +118,8 @@ find "$torrentDirectory" -type f \( -iname "*.m4b" \) | while read -r file; do
             #add series in the path
             if [ -z "$seriespart" ]
             then
+                # multiple books with bad tags in one torrent folder, use this
+                # targetDirectory="${mediaDirectory}/${author}/${series}"
                 targetDirectory="${mediaDirectory}/${author}/${series}/${title}"
             else 
                 targetDirectory="${mediaDirectory}/${author}/${series}/${seriespart} - ${title}"
@@ -138,10 +142,10 @@ find "$torrentDirectory" -type f \( -iname "*.m4b" \) | while read -r file; do
 
         # Create a hard link in the target directory, increment count
         relativePath="$(dirname "$file")"
-        echo ln "\"${relativePath}\""/*.* "\"${targetDirectory}\""/ >> $filename
+        echo ln "\"${file}\"" "\"${targetDirectory}\""/ >> $filename
         if [ "$output" = "e" ]; then
             echo "Hard Linking ${relativePath}/*.* to ${targetDirectory}/"
-            ln "${relativePath}"/*.* "${targetDirectory}"/
+            ln "${file}" "${targetDirectory}"/
         fi
     fi
 done
