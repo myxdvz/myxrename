@@ -11,10 +11,10 @@ A bash script that does the following
 
 | Flag | Description | Default Value |
 | ----------- | ----------- | ----------- |
-|-t |is ideally your torrent directory|/data/torrents/completed/audiobooks
-|-m |is ideally your media or audiobookshelf directory|/data/media/audiobookshelf
-|-f |is the output filename.  This always get generated regardless of the value of -o|myxrename_YYMMDDHHMMss.sh
-|-o |if set to e, it will actually execute the script  (Untested)|f|
+|-t |is ideally your torrent directory|/data/torrents/completed/audiobooks|
+|-m |is ideally your media or audiobookshelf directory|/data/media/audiobookshelf|
+|-f |is the output filename.|myxrename_YYMMDDHHMMss.sh|
+|-o |if set to e, it will actually execute the script, otherwise, it's a dry run with the commands in the outputfile |f|
 
 ## How it works
 **It takes the following tags**
