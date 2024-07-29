@@ -5,8 +5,8 @@
 # mediaDirectory="/path/to/target"
 
 #default values
-torrentDirectory="/Volumes/plex/torrents/complete/audiobooks"
-mediaDirectory="/Volumes/plex/media/audiobooks/audiobookshelf"
+torrentDirectory="/data/torrents/complete/audiobooks"
+mediaDirectory="/data/media/audiobooks/audiobookshelf"
 output="f"
 filename="myxrename"
 declare -i torrentCount=0
@@ -142,10 +142,11 @@ find "$torrentDirectory" -type f \( -iname "*.m4b" \) | while read -r file; do
 
         # Create a hard link in the target directory, increment count
         relativePath="$(dirname "$file")"
-        echo ln "\"${file}\"" "\"${targetDirectory}\""/ >> $filename
         if [ "$output" = "e" ]; then
-            echo "Hard Linking ${relativePath}/*.* to ${targetDirectory}/"
+            echo "Hard Linking ${file} to ${targetDirectory}/"
             ln "${file}" "${targetDirectory}"/
+        else
+            echo ln "\"${file}\"" "\"${targetDirectory}\""/ >> $filename
         fi
     fi
 done
