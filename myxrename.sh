@@ -119,8 +119,8 @@ find "$torrentDirectory" -type f \( -iname "*.m4b" \) | while read -r file; do
             if [ -z "$seriespart" ]
             then
                 # multiple books with bad tags in one torrent folder, use this
-                # targetDirectory="${mediaDirectory}/${author}/${series}"
-                targetDirectory="${mediaDirectory}/${author}/${series}/${title}"
+                targetDirectory="${mediaDirectory}/${author}/${series}"
+                # targetDirectory="${mediaDirectory}/${author}/${series}/${title}"
             else 
                 targetDirectory="${mediaDirectory}/${author}/${series}/${seriespart} - ${title}"
             fi
